@@ -1,7 +1,7 @@
-import { Promise } from "mongoose"
+// import { Promise } from "mongoose"
 
 const asyncHandler = (requesthendler) => {
-    (req,res,next) => {
+    return (req,res,next) => {
         Promise.resolve(requesthendler(req,res,next)).catch((err) => next(err))
     }
  }
